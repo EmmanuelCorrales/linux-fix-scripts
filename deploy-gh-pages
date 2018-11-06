@@ -1,0 +1,11 @@
+#!/bin/bash
+JEKYLL_ENV=production bundle exec jekyll build
+echo "Deploying to $1."
+echo $1 > _site/CNAME
+git add _site
+git commit -m "Deploy"
+git branch -D gh-pages
+git push origin gh-pages --delete
+git subtree split -P _site -b gh-pages
+git subtree push -P _site origin gh-pages
+[ $? = 0 ] && git reset HEAD~1 --hard
