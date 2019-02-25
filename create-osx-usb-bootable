@@ -3,3 +3,7 @@
 # Format disk as Extended Journaled.
 # diskutil eraseDisk FILE_SYSTEM DISK_NAME DISK_IDENTIFIER
 diskutil eraseDisk JHFS+ EMC /dev/disk2
+
+# Create a USB bootable disk.
+sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia \
+  --volume /Volumes/EMC --nointeraction && say Mojave Drive Created
