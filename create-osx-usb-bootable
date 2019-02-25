@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Format disk as Extended Journaled.
+# diskutil eraseDisk FILE_SYSTEM DISK_NAME DISK_IDENTIFIER
+diskutil eraseDisk JHFS+ EMC /dev/disk2
